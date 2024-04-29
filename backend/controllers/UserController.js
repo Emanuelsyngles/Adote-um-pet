@@ -30,5 +30,16 @@ module.exports = class UserController {
             res.status(422).json({message: 'As senhas não conhecidem, por favor tenta novamente.'})
             return
         }
+
+        // check if user exists
+        const userExistis = await User.findOne({email: email})
+
+        if(userExistis) {
+            res.status(422)
+            .json({
+                message: 'Por favor, utilize outro e-mail'
+            })
+            return
+        }
     }
 }
