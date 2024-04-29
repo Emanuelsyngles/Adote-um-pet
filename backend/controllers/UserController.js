@@ -2,6 +2,12 @@ const User = require('../models/User')
 
 module.exports = class UserController {
     static async register(req, res) {
-        res.json('Olá get a pet')
+        
+        const name = req.body.name
+        const email = req.body.email
+        const phone = req.body.phone
+        const password = req.body.password
+        const confirmpassword = req.body.confirmpassword
+
     }
 }
